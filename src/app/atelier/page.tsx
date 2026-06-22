@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { Fraunces, Inter } from "next/font/google";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { pic } from "@/lib/photos";
 import BodyBg from "@/components/BodyBg";
 import ChooserLink from "@/components/ChooserLink";
 import "./atelier.css";
@@ -25,9 +24,9 @@ const inter = Inter({
 });
 
 const dishes = [
-  { num: "I", name: "Hand-Dived Scallop", desc: "Brown butter, cauliflower, oscietra caviar", price: "32", seed: "atl-d1" },
-  { num: "II", name: "Aged Pigeon", desc: "Beetroot, blackberry, juniper jus", price: "46", seed: "atl-d2" },
-  { num: "III", name: "Tarte au Citron", desc: "Amalfi lemon, brown sugar, sheep's milk", price: "22", seed: "atl-d3" },
+  { num: "I", name: "Hand-Dived Scallop", desc: "Brown butter, cauliflower, oscietra caviar", price: "32", src: "/photos/plate.jpg" },
+  { num: "II", name: "Aged Pigeon", desc: "Beetroot, blackberry, juniper jus", price: "46", src: "/photos/burger.jpg" },
+  { num: "III", name: "Tarte au Citron", desc: "Amalfi lemon, brown sugar, sheep's milk", price: "22", src: "/photos/spread.jpg" },
 ];
 
 export default function Atelier() {
@@ -99,7 +98,7 @@ export default function Atelier() {
           </p>
         </div>
         <div className="atl-hero-media">
-          <img src={pic("atl-hero", 1000, 1300)} alt="A plated course at Meridian" />
+          <img src="/photos/toast.jpg" alt="A plated course at Meridian" />
           <div className="atl-cover" />
         </div>
       </header>
@@ -124,7 +123,7 @@ export default function Atelier() {
           {dishes.map((d) => (
             <article className="atl-dish" key={d.name}>
               <div className="atl-dish-img">
-                <img src={pic(d.seed, 800, 1000)} alt={d.name} />
+                <img src={d.src} alt={d.name} />
               </div>
               <span className="atl-dish-num">COURSE {d.num}</span>
               <h3 className="atl-dish-name">{d.name}</h3>

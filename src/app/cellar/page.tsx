@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { Playfair_Display, Manrope } from "next/font/google";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { pic } from "@/lib/photos";
 import BodyBg from "@/components/BodyBg";
 import ChooserLink from "@/components/ChooserLink";
 import "./cellar.css";
@@ -26,11 +25,11 @@ const manrope = Manrope({
 });
 
 const panels = [
-  { seed: "cel-p1", k: "The Cellar", t: "Two thousand labels" },
-  { seed: "cel-p2", k: "By the Glass", t: "Forty open bottles" },
-  { seed: "cel-p3", k: "The Bar", t: "Stirred, never rushed" },
-  { seed: "cel-p4", k: "Small Plates", t: "To keep you here" },
-  { seed: "cel-p5", k: "The Back Room", t: "For the regulars" },
+  { src: "/photos/atrium.jpg", k: "The Cellar", t: "Two thousand labels" },
+  { src: "/photos/plate.jpg", k: "By the Glass", t: "Forty open bottles" },
+  { src: "/photos/pass.jpg", k: "The Bar", t: "Stirred, never rushed" },
+  { src: "/photos/spread.jpg", k: "Small Plates", t: "To keep you here" },
+  { src: "/photos/toast.jpg", k: "The Back Room", t: "For the regulars" },
 ];
 
 const pours = [
@@ -98,7 +97,7 @@ export default function Cellar() {
       </nav>
 
       <section className="cel-hero">
-        <div className="cel-hero-bg" style={{ backgroundImage: `url(${pic("cel-hero", 1800, 1200)})` }} />
+        <div className="cel-hero-bg" style={{ backgroundImage: "url(/photos/terrace.jpg)" }} />
         <div className="cel-glow" />
         <span className="cel-vlabel">Est. 1936 &middot; Cellar &amp; Bar</span>
         <div className="cel-hero-inner">
@@ -123,8 +122,8 @@ export default function Cellar() {
               that keep people lingering past midnight.</p>
           </div>
           {panels.map((p) => (
-            <figure className="cel-panel" key={p.seed}>
-              <img src={pic(p.seed, 1000, 1200)} alt={p.t} />
+            <figure className="cel-panel" key={p.src}>
+              <img src={p.src} alt={p.t} />
               <figcaption className="cel-panel-cap">
                 <span className="k">{p.k}</span>
                 <span className="t">{p.t}</span>

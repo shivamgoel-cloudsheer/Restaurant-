@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { DM_Serif_Display, Mulish } from "next/font/google";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { pic } from "@/lib/photos";
 import BodyBg from "@/components/BodyBg";
 import ChooserLink from "@/components/ChooserLink";
 import "./maison.css";
@@ -26,9 +25,9 @@ const mulish = Mulish({
 });
 
 const plates = [
-  { name: "Burrata & Peach", desc: "Basil oil, sea salt, sourdough", price: "18", seed: "mai-p1" },
-  { name: "Cacio e Pepe", desc: "Hand-rolled tonnarelli, pecorino", price: "26", seed: "mai-p2" },
-  { name: "Branzino al Forno", desc: "Fennel, lemon, Castelvetrano", price: "38", seed: "mai-p3" },
+  { name: "Burrata & Peach", desc: "Basil oil, sea salt, sourdough", price: "18", src: "/photos/plate.jpg" },
+  { name: "Cacio e Pepe", desc: "Hand-rolled tonnarelli, pecorino", price: "26", src: "/photos/toast.jpg" },
+  { name: "Branzino al Forno", desc: "Fennel, lemon, Castelvetrano", price: "38", src: "/photos/burger.jpg" },
 ];
 
 const marquee = ["Trattoria", "Est. 1936", "Wood Fire", "Midtown", "Family Style"];
@@ -91,7 +90,7 @@ export default function Maison() {
         </div>
 
         <div className="mai-hero-media">
-          <img src={pic("mai-hero", 1000, 1250)} alt="A wood-fired plate at Meridian" />
+          <img src="/photos/spread.jpg" alt="A wood-fired plate at Meridian" />
           <svg className="mai-badge" viewBox="0 0 200 200" aria-hidden>
             <defs>
               <path id="maiCircle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
@@ -124,7 +123,7 @@ export default function Maison() {
           {plates.map((p) => (
             <article className="mai-plate" key={p.name}>
               <div className="mai-plate-img">
-                <img src={pic(p.seed, 800, 800)} alt={p.name} />
+                <img src={p.src} alt={p.name} />
               </div>
               <h3>{p.name}</h3>
               <p>{p.desc}</p>
