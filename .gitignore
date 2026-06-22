@@ -6,3 +6,5 @@
 *.pem
 .env*
 next-env.d.ts
+
+.vercel

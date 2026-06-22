@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { site, img } from "@/lib/content";
+import { site } from "@/lib/content";
 import Reveal from "./Reveal";
 import SplitHeading from "./SplitHeading";
 
@@ -48,8 +48,8 @@ export default function Gallery() {
       <Reveal>
         <div className="gallery-grid">
           {site.gallery.images.map((g) => (
-            <figure className="g-item" key={g.seed}>
-              <img src={img(g.seed, 900, 1200)} alt={g.caption} />
+            <figure className="g-item" key={g.src}>
+              <img src={g.src} alt={g.caption} />
               <figcaption className="g-cap">{g.caption}</figcaption>
             </figure>
           ))}

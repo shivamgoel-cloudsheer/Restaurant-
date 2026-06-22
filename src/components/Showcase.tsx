@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { site, img } from "@/lib/content";
+import { site } from "@/lib/content";
 
 /**
  * Full-bleed crossfading slideshow with Ken Burns drift, auto-advance, and dot
@@ -38,9 +38,9 @@ export default function Showcase() {
       <div className="sc-stage">
         {slides.map((s, i) => (
           <div
-            key={s.seed}
+            key={s.src}
             className={`sc-slide${i === index ? " is-active" : ""}`}
-            style={{ backgroundImage: `url(${img(s.seed, 2000, 1200)})` }}
+            style={{ backgroundImage: `url(${s.src})` }}
           />
         ))}
         <div className="sc-overlay" />
@@ -55,7 +55,7 @@ export default function Showcase() {
         <div className="sc-dots">
           {slides.map((s, i) => (
             <button
-              key={s.seed}
+              key={s.src}
               className={`sc-dot${i === index ? " is-active" : ""}`}
               aria-label={`Show ${slides[i].name}`}
               onClick={() => go(i)}

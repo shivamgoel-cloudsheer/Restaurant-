@@ -1,11 +1,7 @@
 /**
- * Single source of truth for all copy and imagery.
- * Rename the brand, rewrite the copy, and swap the images here - every
- * section reads from this file, so you never have to touch the components.
- *
- * IMAGES: these are grayscale placeholders from picsum.photos so the layout
- * always renders. Replace `img(seed)` calls with your own photo URLs (or move
- * to next/image) once you have real venue photography.
+ * Single source of truth for the Noir template's copy and imagery.
+ * Real photography now lives in /public/photos and is referenced by path.
+ * Swap a photo by dropping a new file in and updating the path here.
  */
 
 export const img = (seed: string, w = 1600, h = 1000) =>
@@ -26,9 +22,9 @@ export const site = {
 
   hero: {
     eyebrow: "Est. 1936  ·  Midtown, New York",
-    // Each word animates in on its own, so keep it punchy.
     title: "Where Midnight Keeps Good Company",
     sub: "A landmark supper club and cocktail bar in the heart of Midtown - low light, long pours, and live jazz since 1936.",
+    image: "/photos/pass.jpg",
   },
 
   marquee: [
@@ -42,6 +38,7 @@ export const site = {
   story: {
     eyebrow: "Our Story",
     heading: "Born in 1936",
+    image: "/photos/atrium.jpg",
     body: [
       "Meridian opened its doors the winter Prohibition was still a fresh memory, tucked behind an unmarked bronze door on a side street most people walked right past.",
       "Nine decades later the room has barely changed - the same brass rail, the same low amber light, the same idea that a good night should feel a little bit secret.",
@@ -93,26 +90,26 @@ export const site = {
     ],
   },
 
+  showcase: {
+    eyebrow: "From the Pass",
+    slides: [
+      { src: "/photos/plate.jpg", name: "Cured Loch Duart Salmon", desc: "Sourdough, watercress, aged balsamic" },
+      { src: "/photos/spread.jpg", name: "The Table d'Hote", desc: "A spread laid for the whole party" },
+      { src: "/photos/burger.jpg", name: "The Meridian Burger", desc: "Dry-aged beef, raclette, shoestring onions" },
+      { src: "/photos/toast.jpg", name: "Soft Egg & Avocado", desc: "Cultured butter, seeded rye, espelette" },
+    ],
+  },
+
   gallery: {
     eyebrow: "The Room",
     heading: "Step Inside",
     images: [
-      { seed: "meridian-g1", caption: "The main room" },
-      { seed: "meridian-g2", caption: "The brass bar" },
-      { seed: "meridian-g3", caption: "Corner booths" },
-      { seed: "meridian-g4", caption: "After the second pour" },
-      { seed: "meridian-g5", caption: "The bandstand" },
-      { seed: "meridian-g6", caption: "Last call" },
-    ],
-  },
-
-  showcase: {
-    eyebrow: "From the Pass",
-    slides: [
-      { seed: "meridian-sc1", name: "Dry-Aged Ribeye", desc: "Bone marrow butter, pommes frites" },
-      { seed: "meridian-sc2", name: "The Tower", desc: "Oysters, prawns, lobster, on crushed ice" },
-      { seed: "meridian-sc3", name: "The Meridian", desc: "Rye, amaro, smoked bitters, orange oil" },
-      { seed: "meridian-sc4", name: "Truffle Tagliatelle", desc: "Hand rolled, parmesan, winter truffle" },
+      { src: "/photos/pass.jpg", caption: "The pass" },
+      { src: "/photos/terrace.jpg", caption: "The terrace, after dark" },
+      { src: "/photos/atrium.jpg", caption: "The main room" },
+      { src: "/photos/plate.jpg", caption: "Service" },
+      { src: "/photos/burger.jpg", caption: "The grill" },
+      { src: "/photos/toast.jpg", caption: "Morning service" },
     ],
   },
 

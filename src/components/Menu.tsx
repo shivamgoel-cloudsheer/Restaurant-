@@ -40,11 +40,12 @@ export default function Menu() {
             key={item.name}
             style={{ animationDelay: `${i * 70}ms` }}
           >
-            <div className="mi-main">
+            <div className="mi-row">
               <span className="mi-name">{item.name}</span>
-              <span className="mi-desc">{item.desc}</span>
+              <span className="mi-leader" aria-hidden />
+              <span className="mi-price">{item.price}</span>
             </div>
-            <span className="mi-price">{item.price}</span>
+            <span className="mi-desc">{item.desc}</span>
           </div>
         ))}
       </div>

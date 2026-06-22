@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { site, img } from "@/lib/content";
+import { site } from "@/lib/content";
 import Magnetic from "./Magnetic";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -46,7 +46,7 @@ export default function Hero() {
     <section id="top" className="hero" ref={root}>
       <div
         className="hero-bg"
-        style={{ backgroundImage: `url(${img("meridian-hero", 2000, 1300)})` }}
+        style={{ backgroundImage: `url(${site.hero.image})` }}
       />
       <div className="hero-overlay" />
 

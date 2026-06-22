@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { site, img } from "@/lib/content";
+import { site } from "@/lib/content";
 import Reveal from "./Reveal";
 import SplitHeading from "./SplitHeading";
 import CountUp from "./CountUp";
@@ -34,7 +34,7 @@ export default function Story() {
   return (
     <section id="story" className="section story" ref={root}>
       <Reveal className="story-media">
-        <img src={img("meridian-story", 1200, 1500)} alt="Inside Meridian" />
+        <img src={site.story.image} alt="Inside Meridian" />
         <span className="tag">{site.established}</span>
       </Reveal>
 
