@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { site, img } from "@/lib/content";
 import Reveal from "./Reveal";
+import SplitHeading from "./SplitHeading";
+import CountUp from "./CountUp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +41,7 @@ export default function Story() {
       <div className="story-text">
         <div className="section-head">
           <span className="eyebrow">{site.story.eyebrow}</span>
-          <h2 className="section-title">{site.story.heading}</h2>
+          <SplitHeading text={site.story.heading} />
         </div>
         <Reveal className="story-body">
           {site.story.body.map((p, i) => (
@@ -49,7 +51,7 @@ export default function Story() {
         <Reveal className="story-stats" delay={0.1}>
           {site.story.stats.map((s) => (
             <div key={s.label}>
-              <div className="num">{s.value}</div>
+              <CountUp value={s.value} className="num" />
               <div className="lbl">{s.label}</div>
             </div>
           ))}

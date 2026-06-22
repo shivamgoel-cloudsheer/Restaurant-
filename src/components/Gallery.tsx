@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { site, img } from "@/lib/content";
 import Reveal from "./Reveal";
+import SplitHeading from "./SplitHeading";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +42,7 @@ export default function Gallery() {
     <section id="gallery" className="section" ref={root}>
       <div className="section-head">
         <span className="eyebrow">{site.gallery.eyebrow}</span>
-        <h2 className="section-title">{site.gallery.heading}</h2>
+        <SplitHeading text={site.gallery.heading} />
       </div>
 
       <Reveal>

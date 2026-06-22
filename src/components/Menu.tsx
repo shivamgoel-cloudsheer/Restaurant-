@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { site } from "@/lib/content";
 import Reveal from "./Reveal";
+import SplitHeading from "./SplitHeading";
 
 export default function Menu() {
   const [active, setActive] = useState<string>(site.menu.tabs[0].id);
@@ -12,7 +13,7 @@ export default function Menu() {
     <section id="menu" className="section menu">
       <div className="section-head">
         <span className="eyebrow">{site.menu.eyebrow}</span>
-        <h2 className="section-title">{site.menu.heading}</h2>
+        <SplitHeading text={site.menu.heading} />
       </div>
 
       <Reveal>

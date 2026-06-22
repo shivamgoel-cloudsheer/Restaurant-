@@ -832,6 +832,191 @@ a {
   .menu-item .mi-price { margin-top: 0.4rem; }
 }
 
+/* =========================================================================
+   CUSTOM CURSOR
+   ========================================================================= */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9500;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--paper);
+}
+.cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--paper);
+  transition: width 0.35s var(--ease), height 0.35s var(--ease),
+    background-color 0.35s var(--ease);
+}
+.cursor-ring.is-hover {
+  width: 68px;
+  height: 68px;
+  background: rgba(243, 237, 225, 0.12);
+}
+body.has-cursor,
+body.has-cursor a,
+body.has-cursor button {
+  cursor: none;
+}
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+/* =========================================================================
+   SPLIT HEADING + MAGNETIC
+   ========================================================================= */
+
+.sh-line {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.sh-word {
+  display: inline-block;
+  padding-right: 0.22em;
+  will-change: transform;
+}
+.magnetic {
+  will-change: transform;
+}
+
+/* =========================================================================
+   SCALLOP DIVIDER
+   ========================================================================= */
+
+.scallop {
+  height: 20px;
+  background-color: var(--ink-2);
+  background-image: radial-gradient(
+    circle at 10px 20px,
+    var(--gold) 0 8px,
+    transparent 9px
+  );
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+  animation: scallop 7s linear infinite;
+  opacity: 0.85;
+}
+@keyframes scallop {
+  to {
+    background-position: 20px 0;
+  }
+}
+
+/* =========================================================================
+   SHOWCASE SLIDESHOW
+   ========================================================================= */
+
+.showcase {
+  position: relative;
+  height: 100svh;
+  min-height: 38rem;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.sc-stage {
+  position: absolute;
+  inset: 0;
+}
+.sc-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.4s var(--ease);
+  will-change: opacity;
+}
+.sc-slide.is-active {
+  opacity: 1;
+  animation: scKenburns 7s ease-out forwards;
+}
+@keyframes scKenburns {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.16); }
+}
+.sc-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 12, 0.5) 0%,
+    rgba(11, 11, 12, 0.12) 45%,
+    rgba(11, 11, 12, 0.92) 100%
+  );
+}
+.sc-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 var(--pad-x) clamp(3rem, 7vw, 6rem);
+}
+.sc-content .eyebrow {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+.sc-caption {
+  min-height: 6rem;
+}
+.sc-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  animation: scIn 0.8s var(--ease) both;
+}
+.sc-desc {
+  color: var(--paper-dim);
+  margin-top: 0.6rem;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  animation: scIn 0.8s var(--ease) 0.08s both;
+}
+@keyframes scIn {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.sc-dots {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+.sc-dot {
+  width: 44px;
+  height: 3px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.sc-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: var(--gold);
+}
+.sc-dot.is-active::after {
+  width: 100%;
+  transition: width 4.6s linear;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

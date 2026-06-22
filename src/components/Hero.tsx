@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { site, img } from "@/lib/content";
+import Magnetic from "./Magnetic";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,12 +61,16 @@ export default function Hero() {
         </h1>
         <p className="hero-sub">{site.hero.sub}</p>
         <div className="hero-actions">
-          <a href="#reserve" className="btn btn-gold">
-            Reserve a Table
-          </a>
-          <a href="#menu" className="btn btn-ghost">
-            View the Menu
-          </a>
+          <Magnetic>
+            <a href="#reserve" className="btn btn-gold">
+              Reserve a Table
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a href="#menu" className="btn btn-ghost">
+              View the Menu
+            </a>
+          </Magnetic>
         </div>
       </div>
 

@@ -106,6 +106,16 @@ export const site = {
     ],
   },
 
+  showcase: {
+    eyebrow: "From the Pass",
+    slides: [
+      { seed: "meridian-sc1", name: "Dry-Aged Ribeye", desc: "Bone marrow butter, pommes frites" },
+      { seed: "meridian-sc2", name: "The Tower", desc: "Oysters, prawns, lobster, on crushed ice" },
+      { seed: "meridian-sc3", name: "The Meridian", desc: "Rye, amaro, smoked bitters, orange oil" },
+      { seed: "meridian-sc4", name: "Truffle Tagliatelle", desc: "Hand rolled, parmesan, winter truffle" },
+    ],
+  },
+
   reserve: {
     eyebrow: "Reservations",
     heading: "Hold a Table",

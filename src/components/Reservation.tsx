@@ -1,5 +1,7 @@
 import { site } from "@/lib/content";
 import Reveal from "./Reveal";
+import SplitHeading from "./SplitHeading";
+import Magnetic from "./Magnetic";
 
 export default function Reservation() {
   const r = site.reserve;
@@ -8,17 +10,21 @@ export default function Reservation() {
       <div>
         <div className="section-head" style={{ marginBottom: "0" }}>
           <span className="eyebrow">{r.eyebrow}</span>
-          <h2 className="section-title">{r.heading}</h2>
+          <SplitHeading text={r.heading} />
         </div>
         <Reveal>
           <p className="reserve-body">{r.body}</p>
           <div className="reserve-actions">
-            <a href={`tel:${r.phone.replace(/[^0-9+]/g, "")}`} className="btn btn-gold">
-              Call to Book
-            </a>
-            <a href={`mailto:${r.email}`} className="btn btn-ghost">
-              Email Us
-            </a>
+            <Magnetic>
+              <a href={`tel:${r.phone.replace(/[^0-9+]/g, "")}`} className="btn btn-gold">
+                Call to Book
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a href={`mailto:${r.email}`} className="btn btn-ghost">
+                Email Us
+              </a>
+            </Magnetic>
           </div>
         </Reveal>
       </div>
