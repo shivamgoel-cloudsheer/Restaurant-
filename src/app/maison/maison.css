@@ -1,0 +1,191 @@
+/* Template 04 - Maison: warm Mediterranean trattoria. Classes prefixed mai-. */
+
+.mai {
+  --terra: #c4622d;
+  --terra-deep: #a4491c;
+  --cream: #f5ecdb;
+  --olive: #5b6236;
+  --ink: #2a1d17;
+  --line: rgba(42, 29, 23, 0.16);
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100dvh;
+  font-family: var(--font-mulish), sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+.mai img { display: block; max-width: 100%; }
+
+/* Nav */
+.mai-nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: clamp(1.1rem, 2.5vw, 1.7rem) clamp(1.25rem, 5vw, 4rem);
+}
+.mai-brand {
+  font-family: var(--font-dmserif), serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  color: var(--terra-deep);
+}
+.mai-nav-links { display: flex; gap: 2rem; }
+.mai-nav-links a {
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; opacity: 0.8;
+}
+.mai-reserve {
+  background: var(--terra);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.7em 1.4em;
+  border-radius: 100px;
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+.mai-reserve:hover { background: var(--terra-deep); }
+
+/* Hero */
+.mai-hero {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: 8rem clamp(1.25rem, 5vw, 5rem) 4rem;
+  position: relative;
+}
+.mai-eyebrow {
+  display: inline-block;
+  font-size: 0.74rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--terra-deep); margin-bottom: 1.6rem;
+}
+.mai-title {
+  font-family: var(--font-dmserif), serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.98;
+}
+.mai-title .it { font-style: italic; color: var(--terra); }
+.mai-line-mask { display: block; overflow: hidden; }
+.mai-line-inner { display: block; will-change: transform; }
+.mai-lead {
+  margin-top: 1.8rem;
+  max-width: 30rem;
+  color: rgba(42, 29, 23, 0.72);
+  line-height: 1.8;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+}
+.mai-hero-media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 220px 220px 18px 18px;
+  overflow: hidden;
+  background: var(--terra);
+}
+.mai-hero-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(1.05) contrast(1.02);
+  transform: scale(1.12);
+  will-change: transform;
+}
+.mai-badge {
+  position: absolute;
+  left: -2.5rem; bottom: -2.5rem;
+  width: clamp(7rem, 13vw, 10rem);
+  height: clamp(7rem, 13vw, 10rem);
+  animation: maiSpin 20s linear infinite;
+  z-index: 3;
+}
+.mai-badge circle.bg { fill: var(--olive); }
+.mai-badge text { fill: var(--cream); font-family: var(--font-mulish), sans-serif; font-size: 13px; letter-spacing: 2px; }
+.mai-badge .star { font-size: 26px; }
+@keyframes maiSpin { to { transform: rotate(360deg); } }
+
+/* Marquee */
+.mai-marquee {
+  background: var(--terra);
+  color: var(--cream);
+  padding: 1.3rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mai-marquee-track {
+  display: inline-flex;
+  gap: 2.5rem;
+  animation: maiMarquee 26s linear infinite;
+}
+.mai-marquee-track span {
+  font-family: var(--font-dmserif), serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  display: inline-flex; gap: 2.5rem; align-items: center;
+}
+.mai-marquee-track i { font-style: normal; opacity: 0.6; }
+@keyframes maiMarquee { to { transform: translateX(-50%); } }
+
+/* Plates */
+.mai-plates {
+  padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+}
+.mai-plates-head {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.mai-plates-head h2 {
+  font-family: var(--font-dmserif), serif;
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+.mai-plates-head p {
+  margin-top: 0.6rem;
+  font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--terra-deep);
+}
+.mai-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  max-width: 78rem;
+  margin: 0 auto;
+}
+.mai-plate { text-align: center; will-change: transform, opacity; }
+.mai-plate-img {
+  aspect-ratio: 1 / 1;
+  border-radius: 999px 999px 16px 16px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  background: var(--terra);
+}
+.mai-plate-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22,1,0.36,1);
+}
+.mai-plate:hover .mai-plate-img img { transform: scale(1.06); }
+.mai-plate h3 { font-family: var(--font-dmserif), serif; font-size: 1.5rem; }
+.mai-plate p { color: rgba(42,29,23,0.62); font-size: 0.92rem; margin-top: 0.3rem; }
+.mai-plate .pr { color: var(--terra-deep); margin-top: 0.5rem; font-weight: 600; }
+
+/* Footer */
+.mai-footer {
+  background: var(--olive);
+  color: var(--cream);
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem);
+  text-align: center;
+}
+.mai-footer-mark {
+  font-family: var(--font-dmserif), serif;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+}
+.mai-footer-row {
+  margin-top: 1.4rem;
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem;
+  font-size: 0.82rem; letter-spacing: 0.06em; opacity: 0.85;
+}
+
+@media (max-width: 860px) {
+  .mai-hero { grid-template-columns: 1fr; }
+  .mai-nav-links { display: none; }
+  .mai-grid { grid-template-columns: 1fr; max-width: 24rem; }
+  .mai-badge { left: auto; right: 1rem; bottom: -2rem; }
+}

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import Preloader from "@/components/Preloader";
 import CustomCursor from "@/components/CustomCursor";
 
+// Base pair used by the Noir template; other templates load their own fonts.
 const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -20,9 +20,9 @@ const sans = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "MERIDIAN - Supper Club & Cocktail Bar | Est. 1936",
+  title: "MERIDIAN - Home Page Templates",
   description:
-    "A landmark supper club and cocktail bar in the heart of Midtown New York - low light, long pours, and live jazz since 1936.",
+    "Five distinct home-page concepts for a restaurant brand - each with its own theme, typography, and motion.",
 };
 
 export default function RootLayout({
@@ -33,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body>
-        <Preloader />
         <CustomCursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>

@@ -1,0 +1,155 @@
+/* Template 05 - Brut: brutalist kinetic monochrome. Classes prefixed bru-. */
+
+.bru {
+  --bg: #0f0f0f;
+  --fg: #f2f0ea;
+  --red: #ff3b00;
+  --line: rgba(242, 240, 234, 0.22);
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100dvh;
+  font-family: var(--font-spacemono), monospace;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+.bru img { display: block; max-width: 100%; }
+.bru-display { font-family: var(--font-anton), sans-serif; font-weight: 400; text-transform: uppercase; }
+
+/* Nav */
+.bru-nav {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+.bru-brand { font-family: var(--font-anton), sans-serif; font-size: 1.4rem; letter-spacing: 0.04em; }
+.bru-nav-links { display: flex; gap: 1.6rem; }
+.bru-nav-links a { color: var(--fg); text-decoration: none; }
+.bru-nav-links a:hover { color: var(--red); }
+
+/* Hero */
+.bru-hero {
+  min-height: 100dvh;
+  padding: 6rem clamp(1rem, 4vw, 3rem) 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+.bru-scramble {
+  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  min-height: 1.4em;
+}
+.bru-huge {
+  font-family: var(--font-anton), sans-serif;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.005em;
+  font-size: clamp(3.5rem, 17vw, 15rem);
+}
+.bru-huge .ln { display: block; overflow: hidden; }
+.bru-huge .ln > span { display: block; will-change: transform; }
+.bru-huge .accent { color: var(--red); }
+.bru-hero-foot {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 1.4rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.bru-hero-foot .box {
+  border: 1px solid var(--line);
+  padding: 0.5em 0.9em;
+}
+.bru-hero-foot .spacer { flex: 1; }
+
+/* Kinetic marquee */
+.bru-kinetic {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 0;
+  white-space: nowrap;
+}
+.bru-kinetic-track {
+  display: inline-flex;
+  gap: 1.5rem;
+  font-family: var(--font-anton), sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  will-change: transform;
+}
+.bru-kinetic-track.a { animation: bruScrollA 18s linear infinite; }
+.bru-kinetic-track.b { animation: bruScrollB 22s linear infinite; }
+.bru-kinetic-track .o { color: transparent; -webkit-text-stroke: 1px var(--fg); }
+.bru-kinetic-track .r { color: var(--red); }
+@keyframes bruScrollA { to { transform: translateX(-50%); } }
+@keyframes bruScrollB { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+/* Menu */
+.bru-menu {
+  padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 3rem);
+}
+.bru-menu h2 {
+  font-family: var(--font-anton), sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  margin-bottom: 2rem;
+  line-height: 0.9;
+}
+.bru-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.3rem clamp(0.5rem, 2vw, 1.5rem);
+  border-top: 1px solid var(--line);
+  text-transform: uppercase;
+  transition: background 0.18s steps(2), color 0.18s steps(2);
+  will-change: transform, opacity;
+}
+.bru-row:last-child { border-bottom: 1px solid var(--line); }
+.bru-row:hover { background: var(--fg); color: var(--bg); }
+.bru-row .idx { color: var(--red); font-size: 0.8rem; }
+.bru-row .nm { font-family: var(--font-anton), sans-serif; font-size: clamp(1.2rem, 2.6vw, 1.9rem); }
+.bru-row .ds { font-size: 0.78rem; letter-spacing: 0.04em; opacity: 0.7; }
+.bru-row:hover .ds { opacity: 0.9; }
+.bru-row .pr { font-size: 1rem; }
+
+/* Footer */
+.bru-footer {
+  border-top: 1px solid var(--line);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  text-transform: uppercase; font-size: 0.74rem; letter-spacing: 0.08em;
+}
+.bru-footer .big {
+  width: 100%;
+  font-family: var(--font-anton), sans-serif;
+  font-size: clamp(3rem, 16vw, 13rem);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 760px) {
+  .bru-nav-links { display: none; }
+  .bru-row { grid-template-columns: 2rem 1fr; }
+  .bru-row .pr { grid-column: 2; }
+}

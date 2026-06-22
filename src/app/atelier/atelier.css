@@ -1,0 +1,248 @@
+/* Template 02 - Atelier: bright editorial minimalism. All classes prefixed atl-. */
+
+.atl {
+  --ink: #191917;
+  --gold: #b08d57;
+  --line: rgba(25, 25, 23, 0.14);
+  background: #f5f2eb;
+  color: var(--ink);
+  min-height: 100dvh;
+  font-family: var(--font-inter), "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+.atl img { display: block; max-width: 100%; }
+
+/* Nav */
+.atl-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1.25rem, 5vw, 5rem);
+}
+.atl-brand {
+  font-family: var(--font-fraunces), serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.18em;
+}
+.atl-nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+.atl-nav-links a {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(25, 25, 23, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.atl-nav-links a:hover { color: var(--ink); }
+.atl-reserve {
+  border: 1px solid var(--ink);
+  padding: 0.75em 1.5em;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.atl-reserve:hover { background: var(--ink); color: #f5f2eb; }
+
+/* Hero */
+.atl-hero {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  padding: 8rem clamp(1.25rem, 5vw, 5rem) 4rem;
+}
+.atl-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.8rem;
+}
+.atl-title {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.atl-line-mask {
+  display: block;
+  overflow: hidden;
+}
+.atl-line-inner {
+  display: block;
+  will-change: transform;
+}
+.atl-em {
+  font-style: italic;
+  color: var(--gold);
+}
+.atl-rule {
+  height: 1px;
+  background: var(--ink);
+  margin: 2.2rem 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.atl-lead {
+  max-width: 30rem;
+  color: rgba(25, 25, 23, 0.68);
+  line-height: 1.85;
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+}
+.atl-hero-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.atl-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.18) contrast(1.03);
+  transform: scale(1.15);
+  will-change: transform;
+}
+.atl-cover {
+  position: absolute;
+  inset: 0;
+  background: #e7e1d4;
+  will-change: transform;
+}
+
+/* Statement */
+.atl-statement {
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: clamp(5rem, 11vw, 10rem) clamp(1.25rem, 5vw, 5rem);
+  text-align: center;
+}
+.atl-quote {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 300;
+  font-size: clamp(1.7rem, 3.8vw, 3rem);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+}
+.atl-quote .w {
+  display: inline-block;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.atl-attrib {
+  margin-top: 2.2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Dishes */
+.atl-dishes {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 5rem);
+  border-top: 1px solid var(--line);
+}
+.atl-dishes-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.atl-dishes-head h2 {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  letter-spacing: -0.015em;
+}
+.atl-dishes-head p {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.atl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.atl-dish {
+  will-change: transform, opacity;
+}
+.atl-dish-img {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin-bottom: 1.3rem;
+}
+.atl-dish-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.18) contrast(1.03);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.atl-dish:hover .atl-dish-img img { transform: scale(1.05); }
+.atl-dish-num {
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+}
+.atl-dish-name {
+  font-family: var(--font-fraunces), serif;
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0.4rem;
+}
+.atl-dish-desc {
+  color: rgba(25, 25, 23, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.atl-dish-price {
+  margin-top: 0.7rem;
+  font-family: var(--font-fraunces), serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+/* Footer */
+.atl-footer {
+  border-top: 1px solid var(--line);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 5rem) 6rem;
+}
+.atl-footer-mark {
+  font-family: var(--font-fraunces), serif;
+  font-size: clamp(3rem, 12vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+.atl-footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: rgba(25, 25, 23, 0.55);
+}
+
+@media (max-width: 860px) {
+  .atl-hero { grid-template-columns: 1fr; }
+  .atl-hero-media { aspect-ratio: 4 / 3; }
+  .atl-nav-links { display: none; }
+  .atl-grid { grid-template-columns: 1fr; max-width: 26rem; }
+}
