@@ -83,7 +83,7 @@ export default function Chooser() {
   return (
     <main className="chooser">
       <header className="ch-head">
-        <p className="ch-kicker">Meridian &middot; Design Studio</p>
+        <p className="ch-kicker">Siimply7 &middot; Design Studio</p>
         <h1 className="ch-title">Five Home-Page Directions</h1>
         <p className="ch-sub">
           One restaurant, five distinct concepts - each with its own palette,
